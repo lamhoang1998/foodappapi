@@ -17,7 +17,7 @@ const likeRes = sequelize.define(
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		date_like: { type: "TIMESTAMP", allowNull: false },
+		date_like: { type: "TIMESTAMP", allowNull: true },
 	},
 	{ timestamps: false }
 );

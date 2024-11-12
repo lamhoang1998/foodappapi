@@ -3,6 +3,7 @@ import likeController from "../controllers/like.controller.js";
 
 const likeRouter = express.Router();
 
+// send  request as {userId: number , resId: number}
 likeRouter.post("/likes", likeController.like);
 
 likeRouter.delete("/unlike", likeController.unlike);
