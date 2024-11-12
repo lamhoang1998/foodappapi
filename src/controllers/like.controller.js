@@ -4,7 +4,6 @@ import likeService from "../services/like.service.js";
 const likeController = {
 	like: async (req, res, next) => {
 		try {
-			console.log(req.body);
 			const result = await likeService.like(req.body);
 
 			const resData = responseSuccess(

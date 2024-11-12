@@ -6,7 +6,7 @@ import userModel from "./user.model.js";
 const rateRes = sequelize.define(
 	"rate_res",
 	{
-		res_id: {
+		rate_id: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
