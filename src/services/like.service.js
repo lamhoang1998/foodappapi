@@ -1,4 +1,6 @@
 import likeRes from "../models/like.model.js";
+import resModel from "../models/res.model.js";
+import userModel from "../models/user.model.js";
 
 const likeService = {
 	like: async (req) => {
@@ -24,8 +26,23 @@ const likeService = {
 
 		return unLike;
 	},
-	likebyres: async (id) => {},
-	likebyuser: async (req) => {},
+	likebyres: async (id) => {
+		const likeByRes = await likeRes.findAll({
+			where: { res_id: +id },
+			include: resModel,
+		});
+
+		console.log(likeByRes);
+		return likeByRes;
+	},
+	likebyuser: async (id) => {
+		const likeByUser = await likeRes.findAll({
+			where: { user_id: +id },
+			include: userModel,
+		});
+		console.log(likeByUser);
+		return likeByUser;
+	},
 };
 
 export default likeService;

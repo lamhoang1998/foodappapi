@@ -20,7 +20,7 @@ const likeController = {
 	unlike: async (req, res, next) => {
 		try {
 			const result = await likeService.unlike(req.body);
-			const resData = responseSuccess(result, "successful unliked");
+			const resData = responseSuccess(result, "successfully unliked");
 			res.status(200).json(resData);
 		} catch (error) {
 			next(error);
@@ -29,12 +29,23 @@ const likeController = {
 	likebyres: async (req, res, next) => {
 		try {
 			const result = await likeService.likebyres(req.params.id);
+			const resData = responseSuccess(
+				result,
+				"successfully got likes from restaurant "
+			);
+			res.status(200).json(resData);
 		} catch (error) {
 			next(error);
 		}
 	},
 	likebyuser: async (req, res, next) => {
 		try {
+			const result = await likeService.likebyuser(req.params.id);
+			const resData = responseSuccess(
+				result,
+				"successfully got likes from user "
+			);
+			res.status(200).json(resData);
 		} catch (error) {
 			next(error);
 		}

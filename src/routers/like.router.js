@@ -9,4 +9,6 @@ likeRouter.delete("/unlike", likeController.unlike);
 
 likeRouter.get("/likebyres/:id", likeController.likebyres);
 
+likeRouter.get("/likebyuser/:id", likeController.likebyuser);
+
 export default likeRouter;
